@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "0d526008-224e-4cba-8b30-0b9a4b567303",
+		"name": "wordpress api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14356013"
+	},
+	"item": [
+		{
+			"name": "/events/list",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "admin@123",
+						"username": "admin"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost/website/wp-json/events/list"
+			},
+			"response": []
+		},
+		{
+			"name": "/events/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"6th entry\",\r\n    \"description\": \"6th entry\",\r\n    \"category_name\": \"new one\",\r\n    \"date\": \"2023-10-27 20:11:35\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost/website/wp-json/events/create"
+			},
+			"response": []
+		},
+		{
+			"name": "/events/update?id=4",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"4th entry\",\r\n    \"description\": \"4th entry\",\r\n    \"category_name\": \"new one\",\r\n    \"date\": \"2023-10-27 20:11:35\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/website/wp-json/events/update?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"website",
+						"wp-json",
+						"events",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/events/list?id=4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/website/wp-json/events/list?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"website",
+						"wp-json",
+						"events",
+						"list"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/events/delete?id=4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/website/wp-json/events/delete?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"website",
+						"wp-json",
+						"events",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
